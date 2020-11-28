@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+</head>
+
+<body style="min-height: 100vh;" class="d-flex flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="container mt-5" style="flex-grow: 1;">
+        <h1 class="text-center mb-5 font-weight-light">Jobs Vacancy</h1>
+        <p class="font-weight-light">There's none at the moment, do come back again :)</p>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</body>
+
+</html>

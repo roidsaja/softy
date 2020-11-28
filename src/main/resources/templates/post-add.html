@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+</head>
+
+<body style="min-height: 100vh;" class="d-flex flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="container mt-5 mb-5" style="flex-grow: 1;">
+        <h1 class="mb-5 font-weight-light">Adding a post</h1>
+        <form th:action="@{/post/add}" method="post">
+            <input type="text" name="title" placeholder="Enter the title" class="form-control">
+            <br>
+            <input type="text" name="anons" placeholder="Enter an announcement" class="form-control">
+            <br>
+            <textarea name="full_text" placeholder="Enter the full content" class="form-control"></textarea>
+            <br>
+            <button type="submit" class="btn btn-success">Adding a post</button>
+        </form>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</body>
+
+</html>

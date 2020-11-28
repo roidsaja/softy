@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+</head>
+
+<body style="min-height: 100vh;" class="d-flex flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="container mt-5" style="flex-grow: 1;">
+        <h1 class="text-center mb-5 font-weight-light">Scholarship</h1>
+        <p class="font-weight-bold">As an appreciation for students with outstanding achievements IULI provides</p>
+        <li>Best Student with achievement of A Grade in Class will have free 100% of the tuition fee for the following
+            semester</li>
+        <li>Best Student with achievement of B Grade in Class will have 50% reduction of the tuition fee for the
+            following semester 1</li>
+        <p>Applies for class of minimum 15 students</p><hr>
+        <p class="font-weight-bold">Discount for Siblings</p>
+        <li>50% semester fee discount for the second student for the whole period both siblings are matriculated</li>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</body>
+
+</html>

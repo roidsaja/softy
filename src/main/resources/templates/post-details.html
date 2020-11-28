@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+</head>
+
+<body style="min-height: 100vh;" class="d-flex flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="container mt-5" style="flex-grow: 1;">
+        <h1 class="mb-5 font-weight-light" th:text="${title}"></h1>
+        <div th:each="el : ${post}" class="alert alert-info mt-2">
+            <h3 th:text="'#' + ${el.id} + '. ' + ${el.title}" />
+            <!--        <p th:text="${el}"/>-->
+            <p th:text="${el.full_text}" />
+            <p><b>Views: </b><span th:text="${el.views}"></span></p>
+            <a th:href="@{'/post/' + ${el.id} + '/edit'}" class="btn btn-success mb-2">Edit</a>
+            <form th:action="@{'/post/' + ${el.id} + '/remove'}" method="post">
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </form>
+        </div>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</body>
+
+</html>

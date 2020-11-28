@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+</head>
+
+<body style="min-height: 100vh;" class="d-flex flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="container mt-5" style="flex-grow: 1;">
+        <h1 class="text-center mb-5 font-weight-light">Post List</h1>
+        <a class="mb-5 btn btn-success" th:href="@{'/post/add'}">Add a Post</a>
+        <div th:each="el : ${posts}" class="alert alert-info mt-2">
+            <h3 th:text="'#' + ${el.id} + '. ' + ${el.title}" />
+            <p th:text="${el.anons}" />
+            <!-- <a th:href="'/post/' + ${el.id}" class="btn btn-info">Details...</a> -->
+            <a th:href="@{'/post/'+${el.id}}" class="btn btn-info">Details...</a>
+        </div>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</body>
+
+</html>
