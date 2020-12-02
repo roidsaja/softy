@@ -1,22 +1,21 @@
 package com.softy.softy.model;
 
-import java.util.Collection;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
-public class Post {
+public class Replies {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,11 +24,11 @@ public class Post {
     private String full_text;
     private int views;
 
-    public Post() {
+    public Replies() {
 
     }
 
-    public Post(String title, String anons, String full_text) {
+    public Replies(String title, String anons, String full_text) {
         this.title = title;
         this.anons = anons;
         this.full_text = full_text;
@@ -45,9 +44,11 @@ public class Post {
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date createDate;
-    
-    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
-    private Collection<Replies> replies;
+
+    @ManyToOne
+    @JoinColumn(name = "id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    @NotNull
+    private Post post;
 
     public Long getId() {
         return id;
@@ -95,13 +96,5 @@ public class Post {
 
     public void setCreateDate(Date date) {
         this.createDate = date;
-    }
-
-    public Collection<Replies> getReplies() {
-        return replies;
-    }
-
-    public void setReplies(Collection<Replies> replies) {
-        this.replies = replies;
     }
 }
