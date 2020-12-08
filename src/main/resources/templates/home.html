@@ -2,99 +2,74 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Software Engineering 02 - Forum IULI Discussion Board">
+    <meta name="author" content="Roid Maulana">
+
     <title th:text="${title}"></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+
+    <!-- vendor css -->
+    <link th:href="@{/lib/@fortawesome/fontawesome-free/css/all.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/rickshaw/rickshaw.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/select2/css/select2.min.css}" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" th:href="@{/css/bracket.css}">
+    <link rel="stylesheet" th:href="@{/css/bracket.dark.css}">
 </head>
 
-<body style="min-height: 100vh;" class="d-flex flex-column">
-    <header th:insert="blocks/header :: header">
-    </header>
-    <main style="flex-grow: 1;">
-        <section class="py-5 text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="font-weight-light">Softy</h1>
-                    <p class="lead text-muted">
+<body>
+    <div th:replace="blocks/left-panel :: left-panel"></div>
+    <header th:replace="blocks/header :: header"></header>
+    <div th:replace="blocks/right-panel :: right-panel"></div>
 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer finibus faucibus eros vitae
-                        finibus. Nam fringilla varius arcu, ac faucibus arcu auctor in. Maecenas ultrices, urna nec
-                        laoreet pretium, ipsum ante egestas sem, maximus vehicula neque sem quis arcu. Fusce posuere
-                        dapibus ligula id placerat. Integer hendrerit accumsan velit in suscipit. Mauris quis congue
-                        sapien, non vulputate felis. Praesent dictum odio arcu, id finibus risus elementum a. Quisque
-                        aliquet aliquam massa vel sollicitudin. Mauris dignissim at mauris sit amet aliquam.
-                    </p>
-                    <p class="lead text-muted">
-                        Suspendisse potenti. Nulla tincidunt risus metus, at interdum ligula aliquet non. Integer ut
-                        quam turpis. Ut vitae maximus massa. Donec ut cursus lorem. Vivamus consequat mauris eu nibh
-                        luctus placerat. Nullam non ornare ante. Pellentesque malesuada pellentesque laoreet. Proin elit
-                        nulla, faucibus ut tristique quis, viverra at nisi.
-                    </p>
-                    <p class="lead text-muted">
-                        Nam luctus mauris feugiat, lacinia dolor at, vestibulum risus. Vivamus vel mauris justo. Aenean
-                        gravida erat lorem, eget vehicula ipsum scelerisque at. Mauris mollis ultricies ligula blandit
-                        luctus. Phasellus at risus ut elit semper aliquet quis a orci. Praesent malesuada pulvinar erat,
-                        nec varius neque gravida sed. Nulla sed fermentum augue.
-                    </p>
-                    <p class="lead text-muted">
-                        Maecenas eget ornare lorem. Nulla quis venenatis justo. Suspendisse tempor enim ac eros
-                        efficitur, vitae varius tortor sagittis. Quisque blandit imperdiet tellus eget dictum. Etiam
-                        faucibus tellus ut ipsum pulvinar commodo. Etiam mauris risus, sagittis at porta id, suscipit
-                        non erat. Pellentesque volutpat tempor sollicitudin. Nulla eu purus vitae sem convallis
-                        tincidunt. Donec molestie ut odio et ullamcorper.
-                    </p>
-                    <p class="lead text-muted">
-                        Donec tincidunt accumsan quam, posuere sollicitudin mauris malesuada et. Integer semper non
-                        massa vel iaculis. Quisque dictum mollis elit, et dignissim nisl consectetur nec. Sed ex ante,
-                        mollis sit amet sollicitudin a, feugiat eu justo. Pellentesque malesuada mauris a quam accumsan,
-                        vitae pretium quam blandit. Donec vel neque arcu. Curabitur a metus augue. Nullam mollis dolor
-                        quis fringilla feugiat. Phasellus non odio vel nibh rutrum commodo. Donec pellentesque tincidunt
-                        molestie. Sed hendrerit erat metus, consectetur mattis urna congue non. Fusce mauris eros,
-                        efficitur eget pellentesque sed, aliquet ut diam. Duis mattis sem tellus, vel consectetur augue
-                        consequat non.
-                    </p>
-                    <p>
-                        <a href="#" class="btn btn-primary my-2">Sign Up</a>
-                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModal">Guide</button>
-                    </p>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Guide</h5>
-                                    <button type="button" class="btn-close" data-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer finibus faucibus eros vitae
-                                    finibus. Nam fringilla varius arcu, ac faucibus arcu auctor in. Maecenas ultrices, urna nec
-                                    laoreet pretium, ipsum ante egestas sem, maximus vehicula neque sem quis arcu. Fusce posuere
-                                    dapibus ligula id placerat. Integer hendrerit accumsan velit in suscipit. Mauris quis congue
-                                    sapien, non vulputate felis. Praesent dictum odio arcu, id finibus risus elementum a. Quisque
-                                    aliquet aliquam massa vel sollicitudin. Mauris dignissim at mauris sit amet aliquam.
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+        <div class="br-pagetitle">
+            <i class="icon ion-ios-home-outline tx-70 lh-0"></i>
+            <div>
+                <h4>Softy - Home </h4>
+                <p class="mg-b-0">Your Personal and Customized Page.</p>
             </div>
-        </section>
-    </main>
-    <footer th:insert="blocks/footer :: footer">
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.min.js"
-        integrity="sha384-t6I8D5dJmMXjCsRLhSzCltuhNZg6P10kE0m0nAncLUjH6GeYLhRU1zfLoW3QNQDF"
-        crossorigin="anonymous"></script>
+        </div><!-- d-flex -->
+
+        <div class="br-pagebody">
+            <img th:src="@{/img/kirby.gif}" />
+            <h1 class="display-4"><a class="text-decoration-none text-success" href="/forum/post">See Your Posts</a></h1>
+            <h1 class="display-4"><a class="text-decoration-none text-success" href="/forum/academic">See Academic Related Posts</a></h1>
+            <h1 class="display-4"><a class="text-decoration-none text-success" href="/forum/jobs">See Jobs Related Posts</a></h1>
+        </div><!-- br-pagebody -->
+    </div><!-- br-mainpanel -->
+    <!-- ########## END: MAIN PANEL ########## -->
+
+    <footer th:replace="blocks/footer :: footer"></footer>
+
+    <!-- JS Libraries -->
+    <script th:src="@{/lib/jquery/jquery.min.js}" defer></script>
+    <script th:src="@{/lib/jquery-ui/ui/widgets/datepicker.js}" defer></script>
+    <script th:src="@{/lib/bootstrap/js/bootstrap.bundle.min.js}" defer></script>
+    <script th:src="@{/lib/perfect-scrollbar/perfect-scrollbar.min.js}" defer></script>
+    <script th:src="@{/lib/moment/min/moment.min.js}" defer></script>
+    <script th:src="@{/lib/peity/jquery.peity.min.js}" defer></script>
+    <script th:src="@{/lib/rickshaw/vendor/d3.min.js}" defer></script>
+    <script th:src="@{/lib/rickshaw/vendor/d3.layout.min.js}" defer></script>
+    <script th:src="@{/lib/rickshaw/rickshaw.min.js}" defer></script>
+    <script th:src="@{/lib/jquery.flot/jquery.flot.js}" defer></script>
+    <script th:src="@{/lib/jquery.flot/jquery.flot.resize.js}" defer></script>
+    <script th:src="@{/lib/flot-spline/js/jquery.flot.spline.min.js}" defer></script>
+    <script th:src="@{/lib/jquery-sparkline/jquery.sparkline.min.js}" defer></script>
+    <script th:src="@{/lib/echarts/echarts.min.js}" defer></script>
+    <script th:src="@{/lib/select2/js/select2.full.min.js}" defer></script>
+
+    <script th:src="@{/js/bracket.js}" defer></script>
+    <script th:src="@{/js/map.shiftworker.js}" defer></script>
+    <script th:src="@{/js/ResizeSensor.js}" defer></script>
+    <script th:src="@{/js/dashboard.dark.js}" defer></script>
 </body>
 
 </html>

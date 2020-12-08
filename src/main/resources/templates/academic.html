@@ -2,61 +2,103 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Software Engineering 02 - Forum IULI Discussion Board">
+    <meta name="author" content="Roid Maulana">
+
     <title th:text="${title}"></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+
+    <!-- vendor css -->
+    <link th:href="@{/lib/@fortawesome/fontawesome-free/css/all.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/rickshaw/rickshaw.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/select2/css/select2.min.css}" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" th:href="@{/css/bracket.css}">
+    <link rel="stylesheet" th:href="@{/css/bracket.dark.css}">
 </head>
 
-<body style="min-height: 100vh;" class="d-flex flex-column">
-    <header th:insert="blocks/header :: header"></header>
+<body>
+    <div th:replace="blocks/left-panel :: left-panel"></div>
+    <header th:replace="blocks/header :: header"></header>
+    <div th:replace="blocks/right-panel :: right-panel"></div>
 
-    <div class="container mt-5" style="flex-grow: 1;">
-        <h1 class="text-center mb-5 font-weight-light">Academic</h1>
-        <table class="table table-dark table-striped table-hover table-borderless table-sm">
-            <th>Engineering</th>
-            <th>Social Science</th>
-            <th>Life Science</th>
-            <tbody>
-                <td>Mechanical / Automotive Engineering</td>
-                <td>Hotel and Tourism</td>
-                <td>Chemical Engineering</td>
-            </tbody>
-            <tbody>
-                <td>Mechatronics / Electrical Engineering</td>
-                <td>International Business Administration</td>
-                <td>Food Technology</td>
-            </tbody>
-            <tbody>
-                <td>Aviation / Avionics</td>
-                <td>International Management</td>
-                <td>Biomedical Engineering</td>
-            </tbody>
-            <tbody>
-                <td>Industrial Engineering</td>
-                <td>International Relations</td>
-                <td></td>
-            </tbody>
-            <tbody>
-                <td>Computer Science</td>
-                <td></td>
-                <td></td>
-            </tbody>
-        </table>
-    </div>
-    <hr>
-    <div class="container mt-5" style="flex-grow: 1;">
-        <h1 class="text-center mb-5 font-weight-light">Scholarship</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer finibus faucibus eros vitae
-            finibus. Nam fringilla varius arcu, ac faucibus arcu auctor in. Maecenas ultrices, urna nec
-            laoreet pretium, ipsum ante egestas sem, maximus vehicula neque sem quis arcu. Fusce posuere
-            dapibus ligula id placerat. Integer hendrerit accumsan velit in suscipit. Mauris quis congue
-            sapien, non vulputate felis. Praesent dictum odio arcu, id finibus risus elementum a. Quisque
-            aliquet aliquam massa vel sollicitudin. Mauris dignissim at mauris sit amet aliquam.
-        </p>
-        <a class="btn btn-info" th:href="@{'/academic/scholarship'}">See more</a>
-    </div>
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+        <!-- ACADEMIC POST -->
+        <div class="br-pagetitle">
+            <i class="icon ion-ios-book-outline tx-70 lh-0"></i>
+            <div>
+                <h4>Softy - Academics</h4>
+                <p class="mg-b-0">View Academic Posts Here.</p>
+            </div>
+        </div><!-- d-flex -->
+
+        <div class="br-pagebody">
+            <div class="container mt-5" style="flex-grow: 1;">
+                <table class="table table-dark table-striped table-hover table-borderless table-sm">
+                    <th>Engineering</th>
+                    <th>Social Science</th>
+                    <th>Life Science</th>
+                    <tbody>
+                        <td>Mechanical / Automotive Engineering</td>
+                        <td>Hotel and Tourism</td>
+                        <td>Chemical Engineering</td>
+                    </tbody>
+                    <tbody>
+                        <td>Mechatronics / Electrical Engineering</td>
+                        <td>International Business Administration</td>
+                        <td>Food Technology</td>
+                    </tbody>
+                    <tbody>
+                        <td>Aviation / Avionics</td>
+                        <td>International Management</td>
+                        <td>Biomedical Engineering</td>
+                    </tbody>
+                    <tbody>
+                        <td>Industrial Engineering</td>
+                        <td>International Relations</td>
+                        <td></td>
+                    </tbody>
+                    <tbody>
+                        <td>Computer Science</td>
+                        <td></td>
+                        <td></td>
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- br-pagebody -->
+    </div><!-- br-mainpanel -->
+    <!-- ########## END: MAIN PANEL ########## -->
+
     <footer th:insert="blocks/footer :: footer"></footer>
+
+    <!-- JS Libraries -->
+    <script th:src="@{/lib/jquery/jquery.min.js}" defer></script>
+    <script th:src="@{/lib/jquery-ui/ui/widgets/datepicker.js}" defer></script>
+    <script th:src="@{/lib/bootstrap/js/bootstrap.bundle.min.js}" defer></script>
+    <script th:src="@{/lib/perfect-scrollbar/perfect-scrollbar.min.js}" defer></script>
+    <script th:src="@{/lib/moment/min/moment.min.js}" defer></script>
+    <script th:src="@{/lib/peity/jquery.peity.min.js}" defer></script>
+    <script th:src="@{/lib/rickshaw/vendor/d3.min.js}" defer></script>
+    <script th:src="@{/lib/rickshaw/vendor/d3.layout.min.js}" defer></script>
+    <script th:src="@{/lib/rickshaw/rickshaw.min.js}" defer></script>
+    <script th:src="@{/lib/jquery.flot/jquery.flot.js}" defer></script>
+    <script th:src="@{/lib/jquery.flot/jquery.flot.resize.js}" defer></script>
+    <script th:src="@{/lib/flot-spline/js/jquery.flot.spline.min.js}" defer></script>
+    <script th:src="@{/lib/jquery-sparkline/jquery.sparkline.min.js}" defer></script>
+    <script th:src="@{/lib/echarts/echarts.min.js}" defer></script>
+    <script th:src="@{/lib/select2/js/select2.full.min.js}" defer></script>
+
+    <script th:src="@{/js/bracket.js}" defer></script>
+    <script th:src="@{/js/map.shiftworker.js}" defer></script>
+    <script th:src="@{/js/ResizeSensor.js}" defer></script>
+    <script th:src="@{/js/dashboard.dark.js}" defer></script>
 </body>
 
 </html>
